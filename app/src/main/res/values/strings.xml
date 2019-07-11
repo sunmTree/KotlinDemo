@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">KotlinDemo</string>
+
+    <string name="black_space">&#x20;&#x20;&#x20;</string>
+    <string name="space_demo">Score :\u0020&#x20;</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="match_is_calling">invites you to a video call</string>
+</resources>
