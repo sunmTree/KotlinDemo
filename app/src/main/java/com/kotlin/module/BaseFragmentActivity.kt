@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Window
 import com.kotlin.demo.R
 import com.kotlin.module.app_layout.AppBarLayoutFragment
+import com.kotlin.module.app_layout.NoAppBarLayoutFragment
 import com.kotlin.module.camera.CameraFragment
 import com.kotlin.module.image_decoder.ImageDecoderFragment
 import com.kotlin.module.self_view.SelfViewFragment
@@ -30,6 +31,7 @@ class BaseFragmentActivity : AppCompatActivity() {
             IMAGE_DECODER_MODULE -> ImageDecoderFragment()
             SELF_VIEW_MODULE -> SelfViewFragment()
             APP_BAR_MODULE -> AppBarLayoutFragment()
+            NO_APP_BAR_MODULE -> NoAppBarLayoutFragment()
             else -> DefaultFragment()
         }
         supportFragmentManager.beginTransaction().add(R.id.parent, fragment).commitAllowingStateLoss()

@@ -19,22 +19,34 @@
                 android:layout_height="wrap_content"
                 android:clipChildren="false"
                 android:clipToPadding="false"
+                app:collapsedTitleTextAppearance="@style/Goddess_appearance"
                 app:expandedTitleMarginEnd="96dp"
                 app:expandedTitleMarginStart="20dp"
-                app:collapsedTitleTextAppearance="@style/Goddess_appearance"
+                app:expandedTitleMarginBottom="60dp"
                 app:expandedTitleTextAppearance="@style/Goddess_expand_appearance"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 app:toolbarId="@+id/toolbar">
 
-            <View
+            <android.support.constraint.ConstraintLayout
                     android:id="@+id/bar_content"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp" />
+                    android:layout_height="130dp"
+                    app:layout_collapseMode="parallax"
+                    app:layout_collapseParallaxMultiplier="0.2">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Find Girl For You"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
 
             <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
-                    android:layout_height="?android:attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize"
                     android:clipChildren="false"
                     android:clipToPadding="false"
                     app:layout_collapseMode="pin">
@@ -52,7 +64,7 @@
                             android:id="@+id/icon"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:src="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@mipmap/ic_launcher_round" />
 
                     <TextView
                             android:id="@+id/content"
@@ -77,10 +89,27 @@
     </android.support.design.widget.AppBarLayout>
 
 
-    <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycle"
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/srl_wrapper"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            android:layout_height="match_parent"
+            app:srlEnableHeaderTranslationContent="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:srlEnableLoadmore="false">
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        <com.kotlin.module.app_layout.weight.MaterialHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        <com.kotlin.module.app_layout.weight.ProgressBarFooter
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 </android.support.design.widget.CoordinatorLayout>

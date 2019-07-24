@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--refreshLayout-->
+    <attr name="srlDrawableSize" format="dimension"/><!--图片尺寸-->
+    <attr name="srlDrawableArrowSize" format="dimension"/><!--箭头图片尺寸-->
+    <attr name="srlDrawableProgressSize" format="dimension"/><!--箭头图片尺寸-->
+    <attr name="srlDrawableMarginRight" format="dimension"/><!--图片和文字的间距-->
+    <attr name="srlTextSizeTitle" format="dimension"/><!--标题字体-->
+    <attr name="srlTextSizeTime" format="dimension"/><!--时间字体-->
+    <attr name="srlFinishDuration" format="integer"/><!--完成时停留时间-->
+    <attr name="srlPrimaryColor" format="color"/><!--主要颜色-->
+    <attr name="srlAccentColor" format="color"/><!--强调颜色-->
+    <attr name="srlDrawableArrow" format="reference"/><!--箭头图片-->
+    <attr name="srlDrawableProgress" format="reference"/><!--转动图片-->
+    <attr name="srlEnableHorizontalDrag" format="boolean"/><!--支持水平拖动-->
+
+    <attr name="srlClassicsSpinnerStyle" format="enum">
+        <enum name="Translate" value="0"/><!--平行移动-->
+        <enum name="Scale" value="1"/><!--拉伸形变-->
+        <enum name="FixedBehind" value="2"/><!--固定在背后-->
+    </attr>
+
+    <attr name="layout_srlSpinnerStyle" format="enum">
+        <enum name="Translate" value="0"/><!--平行移动-->
+        <enum name="Scale" value="1"/><!--拉伸形变-->
+        <enum name="FixedBehind" value="2"/><!--固定在背后-->
+        <enum name="FixedFront" value="3"/><!--固定在前面-->
+        <enum name="MatchLayout" value="4"/><!--填满布局-->
+    </attr>
+
+    <declare-styleable name="SmartRefreshLayout">
+        <attr name="srlPrimaryColor"/>
+        <attr name="srlAccentColor"/>
+        <attr name="srlReboundDuration" format="integer"/>
+        <attr name="srlHeaderHeight" format="dimension"/>
+        <attr name="srlFooterHeight" format="dimension"/>
+        <attr name="srlDragRate" format="float"/>
+        <attr name="srlHeaderMaxDragRate" format="float"/>
+        <attr name="srlFooterMaxDragRate" format="float"/>
+        <attr name="srlHeaderTriggerRate" format="float"/>
+        <attr name="srlFooterTriggerRate" format="float"/>
+        <attr name="srlEnableRefresh" format="boolean"/>
+        <attr name="srlEnableLoadmore" format="boolean"/>
+        <attr name="srlEnableHeaderTranslationContent" format="boolean"/>
+        <attr name="srlEnableFooterTranslationContent" format="boolean"/>
+        <attr name="srlEnablePreviewInEditMode" format="boolean"/>
+        <attr name="srlEnableAutoLoadmore" format="boolean"/>
+        <attr name="srlEnableOverScrollBounce" format="boolean"/>
+        <attr name="srlEnablePureScrollMode" format="boolean"/>
+        <attr name="srlEnableNestedScrolling" format="boolean"/>
+        <attr name="srlEnableScrollContentWhenLoaded" format="boolean"/>
+        <attr name="srlEnableLoadmoreWhenContentNotFull" format="boolean"/>
+        <attr name="srlDisableContentWhenRefresh" format="boolean"/>
+        <attr name="srlDisableContentWhenLoading" format="boolean"/>
+        <attr name="srlFixedHeaderViewId" format="reference"/>
+        <attr name="srlFixedFooterViewId" format="reference"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="BallPulseFooter">
+        <attr name="srlClassicsSpinnerStyle"/>
+        <attr name="srlPrimaryColor"/>
+        <attr name="srlAccentColor"/>
+    </declare-styleable>
+
+    <declare-styleable name="SmartRefreshLayout_Layout">
+        <attr name="layout_srlSpinnerStyle"/>
+        <attr name="layout_srlBackgroundColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="MaterialHeader">
+        <attr name="mhPrimaryColor" format="color" />
+        <attr name="mhShadowColor" format="color" />
+        <attr name="mhShadowRadius" format="dimension"/>
+        <attr name="mhShowBezierWave" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="ClassicsHeader">
+        <attr name="srlClassicsSpinnerStyle"/>
+        <attr name="srlPrimaryColor"/>
+        <attr name="srlAccentColor"/>
+        <attr name="srlFinishDuration"/>
+        <attr name="srlDrawableArrow"/>
+        <attr name="srlDrawableProgress"/>
+        <attr name="srlDrawableMarginRight"/>
+        <attr name="srlDrawableSize"/>
+        <attr name="srlDrawableArrowSize"/>
+        <attr name="srlDrawableProgressSize"/>
+        <attr name="srlTextSizeTitle"/>
+        <attr name="srlTextSizeTime"/>
+        <attr name="srlTextTimeMarginTop" format="dimension"/>
+        <attr name="srlEnableLastTime" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="ClassicsFooter">
+        <attr name="srlClassicsSpinnerStyle"/>
+        <attr name="srlPrimaryColor"/>
+        <attr name="srlAccentColor"/>
+        <attr name="srlFinishDuration"/>
+        <attr name="srlTextSizeTitle"/>
+        <attr name="srlDrawableArrow"/>
+        <attr name="srlDrawableProgress"/>
+        <attr name="srlDrawableMarginRight"/>
+        <attr name="srlDrawableSize"/>
+        <attr name="srlDrawableArrowSize"/>
+        <attr name="srlDrawableProgressSize"/>
+    </declare-styleable>
+
+    <!--RoundImageView-->
+    <declare-styleable name="RoundedImageView">
+        <attr name="riv_corner_radius" format="dimension" />
+        <attr name="riv_corner_radius_top_left" format="dimension" />
+        <attr name="riv_corner_radius_top_right" format="dimension" />
+        <attr name="riv_corner_radius_bottom_left" format="dimension" />
+        <attr name="riv_corner_radius_bottom_right" format="dimension" />
+        <attr name="riv_border_width" format="dimension" />
+        <attr name="riv_border_color" format="color" />
+        <attr name="riv_mutate_background" format="boolean" />
+        <attr name="riv_oval" format="boolean" />
+        <attr name="android:scaleType" />
+        <attr name="riv_tile_mode">
+            <enum name="clamp" value="0" />
+            <enum name="repeat" value="1" />
+            <enum name="mirror" value="2" />
+        </attr>
+        <attr name="riv_tile_mode_x">
+            <enum name="clamp" value="0" />
+            <enum name="repeat" value="1" />
+            <enum name="mirror" value="2" />
+        </attr>
+        <attr name="riv_tile_mode_y">
+            <enum name="clamp" value="0" />
+            <enum name="repeat" value="1" />
+            <enum name="mirror" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="SwipeMenuLayout">
+        <attr name="leftMenuView" format="reference" />
+        <attr name="rightMenuView" format="reference" />
+        <attr name="contentView" format="reference" />
+        <attr name="canRightSwipe" format="boolean" />
+        <attr name="canLeftSwipe" format="boolean" />
+        <attr name="fraction" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="pstsTabTextSize" format="dimension"/>
+        <attr name="pstsDefTextColor" format="color"/>
+        <attr name="pstsSelTextColor" format="color"/>
+        <attr name="pstsIndicatorPaddingLeftRight" format="dimension"/>
+        <attr name="pstsIndicatorColor" format="color"/>
+        <attr name="pstsIndicatorHeight" format="dimension"/>
+        <attr name="pstsUnderlineColor" format="color"/>
+        <attr name="pstsUnderlineHeight" format="dimension"/>
+        <attr name="pstsDividerColor" format="color"/>
+        <attr name="pstsDividerPadding" format="dimension"/>
+        <attr name="pstsDividerWidth" format="dimension"/>
+        <attr name="pstsTabBackground" format="reference"/>
+        <attr name="pstsTabPaddingLeftRight" format="dimension"/>
+        <attr name="pstsScrollOffset" format="dimension"/>
+        <attr name="pstsShouldExpand" format="boolean"/>
+        <attr name="pstsTextAllCaps" format="boolean"/>
+    </declare-styleable>
+
+
+    <attr name="icon" format="reference" />
+    <attr name="leftText" format="reference" />
+    <attr name="leftTextColor" format="reference" />
+    <attr name="leftTextSize" format="integer" />
+
+    <declare-styleable name="MineItemView">
+        <attr name="icon" />
+        <attr name="leftText" />
+        <attr name="leftTextColor" />
+        <attr name="leftTextSize" />
+    </declare-styleable>
+
+    <declare-styleable name="UserItemView">
+        <attr name="icon" />
+        <attr name="leftText" />
+        <attr name="leftTextColor" />
+        <attr name="leftTextSize" />
+        <attr name="showTopDivider" format="boolean" />
+        <attr name="showBottomDivider" format="boolean" />
+        <attr name="showRight" format="boolean" />
+        <attr name="rightTextColor" format="reference" />
+        <attr name="rightText" format="string" />
+        <attr name="hintText" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="PhoneBindingItemView">
+        <attr name="icon" />
+        <attr name="leftText" />
+        <attr name="leftTextColor" />
+        <attr name="leftTextSize" />
+        <attr name="rightTextColor" />
+        <attr name="rightTextSize" />
+    </declare-styleable>
+
+
+    <declare-styleable name="Toolbar">
+        <attr name="tbShowConfirm" format="boolean" />
+        <attr name="tbTitle" format="reference|string" />
+        <attr name="titleColor" format="color|reference" />
+        <attr name="bgColor" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="BannerLayoutStyle">
+        <attr name="selectedIndicatorColor" format="color|reference" />
+        <attr name="unSelectedIndicatorColor" format="color|reference" />
+        <attr name="indicatorShape" format="enum">
+            <enum name="rect" value="0" />
+            <enum name="oval" value="1" />
+        </attr>
+
+        <attr name="selectedIndicatorHeight" format="dimension|reference" />
+        <attr name="selectedIndicatorWidth" format="dimension|reference" />
+
+        <attr name="unSelectedIndicatorHeight" format="dimension|reference" />
+        <attr name="unSelectedIndicatorWidth" format="dimension|reference" />
+
+        <attr name="indicatorPosition" format="enum">
+            <enum name="centerBottom" value="0" />
+            <enum name="rightBottom" value="1" />
+            <enum name="leftBottom" value="2" />
+            <enum name="centerTop" value="3" />
+            <enum name="rightTop" value="4" />
+            <enum name="leftTop" value="5" />
+        </attr>
+
+        <attr name="indicatorSpace" format="dimension|reference" />
+        <attr name="indicatorMargin" format="dimension|reference" />
+        <attr name="autoPlayDuration" format="integer|reference" />
+        <attr name="scrollDuration" format="integer|reference" />
+        <attr name="isAutoPlay" format="boolean|reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="BeautyView">
+        <attr name="beauty_circle_radius" format="dimension|reference" />
+        <attr name="beauty_circle_color" format="color|reference" />
+        <attr name="beauty_graduated_color" format="color|reference" />
+        <attr name="beauty_graduated_text_color" format="color|reference" />
+        <attr name="beauty_graduated_stroke_width" format="dimension|reference" />
+        <attr name="beauty_graduated_height" format="dimension|reference" />
+        <attr name="beauty_graduated_text" format="reference" />
+        <attr name="beauty_graduated_text_size" format="dimension|reference" />
+        <attr name="beauty_circle_selected_color" format="color|reference" />
+        <attr name="beauty_graduated_circle_gradient_color" format="color|reference" />
+        <attr name="beauty_graduated_text_unselected_color" format="color|reference" />
+        <attr name="beauty_graduated_text_selected_color" format="color|reference" />
+        <attr name="beauty_gradient_space" format="dimension|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="SwitchButton">
+        <attr name="sb_shadow_radius" format="reference|dimension"/>
+        <attr name="sb_shadow_offset" format="reference|dimension"/>
+        <attr name="sb_shadow_color" format="reference|color"/>
+        <attr name="sb_uncheck_color" format="reference|color"/>
+        <attr name="sb_checked_color" format="reference|color"/>
+
+        <attr name="sb_border_width" format="reference|dimension"/>
+        <attr name="sb_checkline_color" format="reference|color"/>
+        <attr name="sb_checkline_width" format="reference|dimension"/>
+        <attr name="sb_uncheckcircle_color" format="reference|color"/>
+        <attr name="sb_uncheckcircle_width" format="reference|dimension"/>
+        <attr name="sb_uncheckcircle_radius" format="reference|dimension"/>
+
+        <attr name="sb_checked" format="reference|boolean"/>
+        <attr name="sb_shadow_effect" format="reference|boolean"/>
+        <attr name="sb_effect_duration" format="reference|integer"/>
+        <attr name="sb_button_color" format="reference|color"/>
+        <attr name="sb_show_indicator" format="reference|boolean"/>
+        <attr name="sb_background" format="reference|color"/>
+        <attr name="sb_enable_effect" format="reference|boolean"/>
+    </declare-styleable>
+    <declare-styleable name="SwitchBox" tools:ignore="ResourceName">
+        <attr name="kswThumbDrawable" format="reference"/>
+        <attr name="kswThumbColor" format="color|reference"/>
+        <attr name="kswThumbMargin" format="dimension|reference"/>
+        <attr name="kswThumbMarginTop" format="dimension|reference"/>
+        <attr name="kswThumbMarginBottom" format="dimension|reference"/>
+        <attr name="kswThumbMarginLeft" format="dimension|reference"/>
+        <attr name="kswThumbMarginRight" format="dimension|reference"/>
+        <attr name="kswThumbWidth" format="dimension|reference"/>
+        <attr name="kswThumbHeight" format="dimension|reference"/>
+        <attr name="kswThumbRadius" format="dimension|reference"/>
+        <attr name="kswBackRadius" format="dimension|reference"/>
+        <attr name="kswBackDrawable" format="reference"/>
+        <attr name="kswBackColor" format="color|reference"/>
+        <attr name="kswFadeBack" format="boolean"/>
+        <attr name="kswThumbRangeRatio" format="float"/>
+        <attr name="kswAnimationDuration" format="integer"/>
+        <attr name="kswTintColor" format="color|reference"/>
+        <attr name="kswTextOn" format="string"/>
+        <attr name="kswTextOff" format="string"/>
+        <attr name="kswTextThumbInset" format="dimension"/>
+        <attr name="kswTextExtra" format="dimension"/>
+        <attr name="kswTextAdjust" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="DiscountCorner" tools:ignore="ResourceName">
+        <attr name="cornerColor" format="color|reference"/>
+        <attr name="textSize" format="dimension|reference"/>
+        <attr name="discountText" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="ShimmerFrameLayout">
+        <attr name="auto_start1" format="boolean" />
+        <attr name="base_alpha1" format="float" />
+        <attr name="duration1" format="integer" />
+        <attr name="repeat_count1" format="integer" />
+        <attr name="repeat_delay1" format="integer" />
+        <attr name="repeat_mode1" format="enum">
+            <enum name="restart1" value="1" />
+            <enum name="reverse1" value="2" />
+        </attr>
+        <attr name="angle1" format="enum">
+            <enum name="cw_01" value="0" />
+            <enum name="cw_901" value="90" />
+            <enum name="cw_1801" value="180" />
+            <enum name="cw_2701" value="270" />
+        </attr>
+        <attr name="dropoff1" format="float" />
+        <attr name="fixed_width1" format="dimension" />
+        <attr name="fixed_height1" format="dimension" />
+        <attr name="intensity1" format="float" />
+        <attr name="relative_width1" format="float" />
+        <attr name="relative_height1" format="float" />
+        <attr name="shape1" format="enum">
+            <enum name="linear1" value="0" />
+            <enum name="radial1" value="1" />
+        </attr>
+        <attr name="tilt1" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="LikeButton">
+        <attr name="icon_type" format="string" />
+        <attr name="icon_size" format="dimension|reference"/>
+        <attr name="like_drawable" format="reference" />
+        <attr name="unlike_drawable" format="reference" />
+        <attr name="dots_primary_color" format="color|reference" />
+        <attr name="dots_secondary_color" format="color|reference" />
+        <attr name="circle_start_color" format="color|reference" />
+        <attr name="circle_end_color" format="color|reference" />
+        <attr name="liked" format="boolean"/>
+        <attr name="is_enabled" format="boolean"/>
+        <attr name="anim_scale_factor" format="float"/>
+    </declare-styleable>
+    <declare-styleable name="RippleBackground">
+        <attr name="rb_color" format="color" />
+        <attr name="rb_strokeWidth" format="dimension"/>
+        <attr name="rb_radius" format="dimension"/>
+        <attr name="rb_duration" format="integer"/>
+        <attr name="rb_rippleAmount" format="integer"/>
+        <attr name="rb_scale" format="float"/>
+        <attr name="rb_type" format="enum">
+            <enum name="fillRipple" value="0"/>
+            <enum name="strokeRipple" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <!-- 速配LoadingView 雷达样式 -->
+    <declare-styleable name="LoadingView">
+        <attr name="load_earth_size" format="dimension|reference" />
+        <attr name="load_circle_size" format="dimension|reference" />
+        <attr name="load_circle_color" format="color|reference" />
+        <attr name="load_radar_color" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ShimmerLayout">
+        <attr name="shimmer_color" format="color|reference"/>
+        <attr name="shimmer_animation_duration" format="integer|reference"/>
+        <attr name="shimmer_auto_start" format="boolean|reference"/>
+        <attr name="shimmer_angle" format="integer|reference"/>
+        <attr name="shimmer_mask_width" format="float|reference"/>
+        <attr name="shimmer_gradient_center_color_width" format="float|reference"/>
+        <attr name="shimmer_reverse_animation" format="boolean|reference"/>
+    </declare-styleable>
+
+</resources>

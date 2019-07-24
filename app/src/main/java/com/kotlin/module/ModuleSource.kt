@@ -11,6 +11,7 @@ const val CAMERA_MODULE = 1
 const val IMAGE_DECODER_MODULE = 2
 const val SELF_VIEW_MODULE = 3
 const val APP_BAR_MODULE = 4
+const val NO_APP_BAR_MODULE = 5
 
 class CameraModuleBean : IModuleBean {
     override fun getModuleName(): String = "Android Camera Demo"
@@ -44,7 +45,15 @@ class AppBarLayoutBean: IModuleBean {
     }
 }
 
+class NoAppBarLayoutBean: IModuleBean {
+    override fun getModuleName(): String = "No App Bar Layout"
+
+    override fun onModuleClick(context: Context) {
+        BaseFragmentActivity.innerIntent(context, NO_APP_BAR_MODULE)
+    }
+}
+
 object SourceList {
     fun getSourceList() = arrayOf(CameraModuleBean(), ImageDecoderBean()
-        , SelfViewBean(), AppBarLayoutBean())
+        , SelfViewBean(), AppBarLayoutBean(), NoAppBarLayoutBean())
 }

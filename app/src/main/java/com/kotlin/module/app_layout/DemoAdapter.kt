@@ -36,6 +36,8 @@ class DemoAdapter(itemList: List<String>, con: Context?): RecyclerView.Adapter<D
         }
     }
 
+    fun getData() = dataList
+
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view)
 
 }

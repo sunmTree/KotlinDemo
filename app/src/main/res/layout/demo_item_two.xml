@@ -17,6 +17,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="1:2"/>
+            app:layout_constraintDimensionRatio="3:5"/>
 
 </android.support.constraint.ConstraintLayout>
