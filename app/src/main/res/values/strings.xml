@@ -8,4 +8,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="match_is_calling">invites you to a video call</string>
+    <string name="transition">Transition Anim</string>
+    <string name="delay_anim">Delay Anim</string>
+    <string name="custom_anim">Custom Anim</string>
+    <string name="title">Title</string>
+    <string name="text1">text view one</string>
+    <string name="text2">text view two</string>
 </resources>

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Window
 import com.kotlin.demo.R
+import com.kotlin.module.animation.TransitionFragment
 import com.kotlin.module.app_layout.AppBarLayoutFragment
 import com.kotlin.module.app_layout.NoAppBarLayoutFragment
 import com.kotlin.module.camera.CameraFragment
@@ -32,6 +33,7 @@ class BaseFragmentActivity : AppCompatActivity() {
             SELF_VIEW_MODULE -> SelfViewFragment()
             APP_BAR_MODULE -> AppBarLayoutFragment()
             NO_APP_BAR_MODULE -> NoAppBarLayoutFragment()
+            TRANSITION_MODULE -> TransitionFragment()
             else -> DefaultFragment()
         }
         supportFragmentManager.beginTransaction().add(R.id.parent, fragment).commitAllowingStateLoss()

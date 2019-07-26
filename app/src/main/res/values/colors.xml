@@ -5,4 +5,8 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="white">#FFFFFF</color>
+    <color name="black_line">#eeE8D9D9</color>
+    <color name="custom_one">#2378f1</color>
+    <color name="custom_two">#94C54A</color>
+    <color name="custom_thi">#CEBF3A</color>
 </resources>

@@ -379,4 +379,6 @@
         <attr name="shimmer_reverse_animation" format="boolean|reference"/>
     </declare-styleable>
 
+    <item name="box3" type="id"/>
+
 </resources>

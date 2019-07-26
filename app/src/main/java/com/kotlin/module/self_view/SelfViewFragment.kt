@@ -1,5 +1,6 @@
 package com.kotlin.module.self_view
 
+import android.animation.ValueAnimator
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
@@ -9,6 +10,10 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AlphaAnimation
+import android.view.animation.Animation
+import android.view.animation.AnimationSet
+import android.view.animation.ScaleAnimation
 import com.kotlin.demo.R
 import kotlinx.android.synthetic.main.self_view_layout.*
 import java.util.concurrent.TimeUnit
@@ -31,7 +36,22 @@ class SelfViewFragment: Fragment(), Handler.Callback {
         super.onViewCreated(view, savedInstanceState)
 //        makeSureTextSize()
         appendText()
+        startAnswerAnim()
         mHandler.sendEmptyMessageDelayed(APPEND_DOT_MSG, TimeUnit.SECONDS.toMillis(1))
+    }
+
+    private fun startAnswerAnim() {
+        val anim = ValueAnimator.ofFloat(0F, 1F).setDuration(1000)
+        anim?.apply { repeatCount = Animation.INFINITE
+            repeatMode = ValueAnimator.RESTART
+        }
+        anim.addUpdateListener { animation ->
+            val value = animation.animatedValue as Float
+            ring_answer_anim.scaleX = (1 + (value * 0.5)).toFloat()
+            ring_answer_anim.scaleY = (1 + (value * 0.5)).toFloat()
+            ring_answer_anim.alpha = (0.6 * (1 - value)).toFloat()
+        }
+        anim.start()
     }
 
     private fun makeSureTextSize() {

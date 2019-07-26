@@ -9,16 +9,38 @@
             android:id="@+id/call_detail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:autoSizeTextType="uniform"
+            android:background="#EBD6C7"
             android:gravity="center"
             android:textColor="#444"
             android:textSize="@dimen/sp_18"
-            android:background="#EBD6C7"
-            android:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintWidth_percent="0.8"
             tools:text="123"/>
+
+    <View
+            android:id="@+id/ring_answer_anim"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_marginTop="@dimen/dp_48"
+            android:background="@drawable/ring_answer_anim_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+            android:id="@+id/ring_answer"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_marginTop="@dimen/dp_48"
+            android:src="@drawable/ic_answer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
 
 </android.support.constraint.ConstraintLayout>
