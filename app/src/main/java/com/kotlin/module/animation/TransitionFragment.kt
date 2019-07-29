@@ -6,10 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.kotlin.demo.R
-import com.kotlin.module.animation.activity.CUSTOM_PAGE
-import com.kotlin.module.animation.activity.DELAY_PAGE
-import com.kotlin.module.animation.activity.FIRST_PAGE
-import com.kotlin.module.animation.activity.TransitionActivity
+import com.kotlin.module.animation.activity.*
 import kotlinx.android.synthetic.main.transition_fragment_layout.*
 
 class TransitionFragment : Fragment() {
@@ -23,6 +20,7 @@ class TransitionFragment : Fragment() {
         transition.setOnClickListener { context?.apply { TransitionActivity.launch(this, FIRST_PAGE) } }
         delay.setOnClickListener { context?.apply { TransitionActivity.launch(this, DELAY_PAGE) } }
         custom.setOnClickListener { context?.apply { TransitionActivity.launch(this, CUSTOM_PAGE) } }
+        transition_activity.setOnClickListener { context?.apply { TransitionActivity.launch(this, TRANSITION_PAGE) } }
     }
 
 }

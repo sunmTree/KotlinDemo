@@ -9,7 +9,12 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name="com.kotlin.module.animation.activity.TransitionActivity">
+        <activity android:name="com.kotlin.module.animation.activity.NextTransActivity"
+                  android:theme="@style/TransitionTheme">
+        </activity>
+        <activity
+                android:name="com.kotlin.module.animation.activity.TransitionActivity"
+                android:theme="@style/TransitionTheme">
         </activity>
         <activity
                 android:name="com.kotlin.module.BaseFragmentActivity"

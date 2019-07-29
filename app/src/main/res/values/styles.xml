@@ -21,4 +21,18 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="TransitionTheme" parent="AppBarTheme">
+        <!-- enable window transition -->
+        <item name="android:windowActivityTransitions">true</item>
+
+        <!--&lt;!&ndash; specify enter or exit transition &ndash;&gt;-->
+        <!--<item name="android:windowEnterTransition">@android:transition/explode</item>-->
+        <!--<item name="android:windowExitTransition">@android:transition/explode</item>-->
+
+        <!--&lt;!&ndash; specify shared element transitions &ndash;&gt;-->
+        <!--<item name="android:windowSharedElementEnterTransition">@transition/change_image_transform</item>-->
+        <!--<item name="android:windowSharedElementExitTransition">@transition/change_image_transform</item>-->
+
+    </style>
+
 </resources>

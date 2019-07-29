@@ -9,6 +9,7 @@
 
     <string name="match_is_calling">invites you to a video call</string>
     <string name="transition">Transition Anim</string>
+    <string name="transition_act">Transition Activity</string>
     <string name="delay_anim">Delay Anim</string>
     <string name="custom_anim">Custom Anim</string>
     <string name="title">Title</string>
