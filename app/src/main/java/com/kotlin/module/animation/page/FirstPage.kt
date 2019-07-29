@@ -1,9 +1,9 @@
 package com.kotlin.module.animation.page
 
 import android.content.Context
-import android.support.transition.Scene
-import android.support.transition.TransitionInflater
-import android.support.transition.TransitionManager
+import androidx.transition.Scene
+import androidx.transition.TransitionInflater
+import androidx.transition.TransitionManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

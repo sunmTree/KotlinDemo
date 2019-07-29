@@ -1,17 +1,15 @@
 package com.kotlin.module.app_layout
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.kotlin.demo.R
 import kotlinx.android.synthetic.main.no_app_bar_layout.*
 import java.util.*
 
-class NoAppBarLayoutFragment : Fragment() {
+class NoAppBarLayoutFragment : androidx.fragment.app.Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,7 +23,10 @@ class NoAppBarLayoutFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        recycle.layoutManager = StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
+        recycle.layoutManager = androidx.recyclerview.widget.StaggeredGridLayoutManager(
+            2,
+            androidx.recyclerview.widget.RecyclerView.VERTICAL
+        )
         recycle.adapter = DemoAdapter(initData(), context)
     }
 

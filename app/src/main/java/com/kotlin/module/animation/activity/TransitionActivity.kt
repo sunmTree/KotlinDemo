@@ -2,8 +2,8 @@ package com.kotlin.module.animation.activity
 
 import android.content.Context
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.kotlin.demo.R
 import com.kotlin.module.animation.page.*
 import kotlinx.android.synthetic.main.activity_transition.*

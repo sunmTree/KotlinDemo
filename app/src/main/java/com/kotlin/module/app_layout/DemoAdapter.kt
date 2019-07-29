@@ -1,8 +1,6 @@
 package com.kotlin.module.app_layout
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +10,7 @@ import kotlinx.android.synthetic.main.demo_item_one.view.*
 private const val FIRST_TYPE = 0x00
 private const val SECOND_TYPE = 0X01
 
-class DemoAdapter(itemList: List<String>, con: Context?): RecyclerView.Adapter<DemoAdapter.ViewHolder>() {
+class DemoAdapter(itemList: List<String>, con: Context?): androidx.recyclerview.widget.RecyclerView.Adapter<DemoAdapter.ViewHolder>() {
     private var dataList = itemList
     private var mContext = con
 
@@ -38,6 +36,6 @@ class DemoAdapter(itemList: List<String>, con: Context?): RecyclerView.Adapter<D
 
     fun getData() = dataList
 
-    inner class ViewHolder(view: View): RecyclerView.ViewHolder(view)
+    inner class ViewHolder(view: View): androidx.recyclerview.widget.RecyclerView.ViewHolder(view)
 
 }

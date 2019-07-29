@@ -6,13 +6,13 @@ import android.content.Context
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.os.Message
-import android.support.transition.Scene
-import android.support.transition.Transition
-import android.support.transition.TransitionManager
-import android.support.transition.TransitionValues
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.transition.Scene
+import androidx.transition.Transition
+import androidx.transition.TransitionManager
+import androidx.transition.TransitionValues
 import com.kotlin.demo.R
 import kotlinx.android.synthetic.main.custom_page.view.*
 

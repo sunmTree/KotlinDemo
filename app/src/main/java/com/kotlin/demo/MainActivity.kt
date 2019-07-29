@@ -2,26 +2,13 @@ package com.kotlin.demo
 
 import android.content.Context
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.os.Message
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.text.Html
-import android.text.SpannableString
-import android.text.SpannableStringBuilder
-import android.text.Spanned
-import android.text.style.AbsoluteSizeSpan
-import android.text.style.ForegroundColorSpan
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import com.kotlin.module.SourceList
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.module_item_layout.view.*
-import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,14 +16,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        recycle.layoutManager = LinearLayoutManager(this)
+        recycle.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         recycle.adapter = ModuleAdapter(this)
     }
 
 }
 
 
-class ModuleAdapter(context: Context): RecyclerView.Adapter<ModuleAdapter.ViewHolder>() {
+class ModuleAdapter(context: Context): androidx.recyclerview.widget.RecyclerView.Adapter<ModuleAdapter.ViewHolder>() {
     private val mContext: Context = context
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
@@ -54,6 +41,6 @@ class ModuleAdapter(context: Context): RecyclerView.Adapter<ModuleAdapter.ViewHo
         p0.itemView.setOnClickListener { module.onModuleClick(mContext) }
     }
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
+    inner class ViewHolder(view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view)
 
 }

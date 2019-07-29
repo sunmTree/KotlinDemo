@@ -4,7 +4,7 @@ import android.animation.ValueAnimator
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.util.Log
 import android.util.TypedValue
 import android.view.LayoutInflater
@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit
 
 private const val APPEND_DOT_MSG = 0x012
 
-class SelfViewFragment: Fragment(), Handler.Callback {
+class SelfViewFragment: androidx.fragment.app.Fragment(), Handler.Callback {
     private var mAppendCount: Int = 0
     private val mHandler: Handler = Handler(this@SelfViewFragment)
 

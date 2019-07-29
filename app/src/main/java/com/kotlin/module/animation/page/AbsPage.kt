@@ -3,7 +3,7 @@ package com.kotlin.module.animation.page
 import android.content.Context
 import android.os.Handler
 import android.os.Message
-import android.support.annotation.CallSuper
+import androidx.annotation.CallSuper
 import android.view.View
 import android.view.ViewGroup
 

@@ -2,23 +2,21 @@ package com.kotlin.module.app_layout
 
 import android.os.Bundle
 import android.os.Handler
-import android.support.design.widget.AppBarLayout
-import android.support.v4.app.Fragment
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.StaggeredGridLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.appbar.AppBarLayout
 import com.kotlin.demo.R
-import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener
 import kotlinx.android.synthetic.main.app_layout_fragment.*
 import java.util.*
 
 private const val TAG_LOG = "AppBarLayout"
 
-class AppBarLayoutFragment : Fragment() {
-    private val layoutManager = StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
+class AppBarLayoutFragment : androidx.fragment.app.Fragment() {
+    private val layoutManager =
+        androidx.recyclerview.widget.StaggeredGridLayoutManager(2, androidx.recyclerview.widget.RecyclerView.VERTICAL)
     private lateinit var mAdapter: DemoAdapter
     private val mHandler = Handler()
 
@@ -55,9 +53,9 @@ class AppBarLayoutFragment : Fragment() {
             mHandler.postDelayed({ srl_wrapper.finishLoadmore() }, 1000L)
         }
         srl_wrapper.isEnableLoadmore = true
-        recycle.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        recycle.addOnScrollListener(object : androidx.recyclerview.widget.RecyclerView.OnScrollListener() {
             var positions = IntArray(2)
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+            override fun onScrolled(recyclerView: androidx.recyclerview.widget.RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 Log.d(
                     TAG_LOG,
@@ -67,11 +65,11 @@ class AppBarLayoutFragment : Fragment() {
                 )
             }
 
-            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+            override fun onScrollStateChanged(recyclerView: androidx.recyclerview.widget.RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 Log.d(TAG_LOG, "onScrollStateChange newState $newState")
                 val lastIndex = mAdapter.getData().size - 1
-                if (newState == RecyclerView.SCROLL_STATE_IDLE
+                if (newState == androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_IDLE
                     && (positions[0] == lastIndex || positions[1] == lastIndex)
                 ) {
                     var lastView = recyclerView.getChildAt(recyclerView.childCount - 1)
