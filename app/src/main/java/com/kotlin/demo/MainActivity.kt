@@ -1,6 +1,7 @@
 package com.kotlin.demo
 
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -39,8 +40,16 @@ class ModuleAdapter(context: Context): androidx.recyclerview.widget.RecyclerView
         val module = SourceList.getSourceList()[p1]
         p0.itemView.item_title.text = module.getModuleName()
         p0.itemView.setOnClickListener { module.onModuleClick(mContext) }
+        p0.itemView.setBackgroundColor(randomColor())
     }
 
     inner class ViewHolder(view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view)
+
+    private fun randomColor() : Int {
+        val r = (Math.random() * 255).toInt()
+        val g = (Math.random() * 255).toInt()
+        val b = (Math.random() * 255).toInt()
+        return Color.argb(0x44, r, g, b)
+    }
 
 }

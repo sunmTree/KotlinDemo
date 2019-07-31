@@ -4,6 +4,10 @@ import android.animation.ValueAnimator
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
+import android.text.SpannableString
+import android.text.SpannedString
+import android.text.style.ForegroundColorSpan
+import android.text.style.ImageSpan
 import androidx.fragment.app.Fragment
 import android.util.Log
 import android.util.TypedValue
@@ -37,6 +41,7 @@ class SelfViewFragment: androidx.fragment.app.Fragment(), Handler.Callback {
 //        makeSureTextSize()
         appendText()
         startAnswerAnim()
+        appendImgTextView()
         mHandler.sendEmptyMessageDelayed(APPEND_DOT_MSG, TimeUnit.SECONDS.toMillis(1))
     }
 
@@ -89,4 +94,16 @@ class SelfViewFragment: androidx.fragment.app.Fragment(), Handler.Callback {
         mHandler.removeCallbacksAndMessages(null)
     }
 
+    fun appendImgTextView() {
+        val coins = "$10086"
+        val content = resources.getString(R.string.coins_for_prime, coins)
+        val spString = SpannableString(content)
+        val index = content.indexOf(coins)
+
+        val foregroundSp = ForegroundColorSpan(resources.getColor(R.color.prime_dialog_title))
+        val imageSp = ImageSpan(context, R.drawable.prime_small_coin)
+        spString.setSpan(imageSp, index, index + 1, 0)
+        spString.setSpan(foregroundSp, index + 1, index + coins.length, 0)
+        span_text.text = spString
+    }
 }

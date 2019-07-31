@@ -15,4 +15,6 @@
     <string name="title">Title</string>
     <string name="text1">text view one</string>
     <string name="text2">text view two</string>
+
+    <string name="coins_for_prime">Top-up %1$s coins and upgrade to Prime now!</string>
 </resources>

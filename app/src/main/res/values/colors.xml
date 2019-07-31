@@ -10,4 +10,6 @@
     <color name="custom_one">#2378f1</color>
     <color name="custom_two">#94C54A</color>
     <color name="custom_thi">#CEBF3A</color>
+
+    <color name="prime_dialog_title">#FFFFE39D</color>
 </resources>
