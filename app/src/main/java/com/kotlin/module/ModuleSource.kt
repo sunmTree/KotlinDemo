@@ -1,6 +1,8 @@
 package com.kotlin.module
 
 import android.content.Context
+import android.content.Intent
+import com.kotlin.module.drawer.DrawerActivity
 
 interface IModuleBean {
     fun getModuleName(): String
@@ -62,8 +64,19 @@ class TransitionBean : IModuleBean {
     }
 }
 
+class DrawerBean: IModuleBean {
+    override fun getModuleName() = "DrawerLayout"
+
+    override fun onModuleClick(context: Context) {
+        DrawerActivity().apply {
+            val intent = Intent(context, this.javaClass)
+            context.startActivity(intent)
+        }
+    }
+}
+
 object SourceList {
     fun getSourceList() = arrayOf(CameraModuleBean(), ImageDecoderBean()
         , SelfViewBean(), AppBarLayoutBean(), NoAppBarLayoutBean(),
-        TransitionBean())
+        TransitionBean(), DrawerBean())
 }
