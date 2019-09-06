@@ -10,8 +10,11 @@ import com.kotlin.module.animation.TransitionFragment
 import com.kotlin.module.app_layout.AppBarLayoutFragment
 import com.kotlin.module.app_layout.NoAppBarLayoutFragment
 import com.kotlin.module.camera.CameraFragment
+import com.kotlin.module.exo.ExoPlayerFragment
 import com.kotlin.module.image_decoder.ImageDecoderFragment
+import com.kotlin.module.java.JavaSimpleFragment
 import com.kotlin.module.self_view.SelfViewFragment
+import com.kotlin.module.thread.ThreadFragment
 
 const val MODULE_BEAN = "Module_Bean"
 
@@ -34,6 +37,9 @@ class BaseFragmentActivity : AppCompatActivity() {
             APP_BAR_MODULE -> AppBarLayoutFragment()
             NO_APP_BAR_MODULE -> NoAppBarLayoutFragment()
             TRANSITION_MODULE -> TransitionFragment()
+            THREAD_MODULE -> ThreadFragment()
+            EXO_MODULE -> ExoPlayerFragment()
+            JAVA_MODULE -> JavaSimpleFragment()
             else -> DefaultFragment()
         }
         supportFragmentManager.beginTransaction().add(R.id.parent, fragment).commitAllowingStateLoss()

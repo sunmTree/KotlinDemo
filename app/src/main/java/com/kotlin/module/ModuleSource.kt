@@ -15,6 +15,9 @@ const val SELF_VIEW_MODULE = 3
 const val APP_BAR_MODULE = 4
 const val NO_APP_BAR_MODULE = 5
 const val TRANSITION_MODULE = 6
+const val THREAD_MODULE = 7
+const val EXO_MODULE = 8
+const val JAVA_MODULE = 9
 
 class CameraModuleBean : IModuleBean {
     override fun getModuleName(): String = "Android Camera Demo"
@@ -24,7 +27,7 @@ class CameraModuleBean : IModuleBean {
     }
 }
 
-class ImageDecoderBean: IModuleBean {
+class ImageDecoderBean : IModuleBean {
     override fun getModuleName(): String = "Image Decoder"
 
     override fun onModuleClick(context: Context) {
@@ -32,7 +35,7 @@ class ImageDecoderBean: IModuleBean {
     }
 }
 
-class SelfViewBean: IModuleBean {
+class SelfViewBean : IModuleBean {
     override fun getModuleName(): String = "Self View"
 
     override fun onModuleClick(context: Context) {
@@ -40,7 +43,7 @@ class SelfViewBean: IModuleBean {
     }
 }
 
-class AppBarLayoutBean: IModuleBean {
+class AppBarLayoutBean : IModuleBean {
     override fun getModuleName(): String = "App Bar Layout"
 
     override fun onModuleClick(context: Context) {
@@ -48,7 +51,7 @@ class AppBarLayoutBean: IModuleBean {
     }
 }
 
-class NoAppBarLayoutBean: IModuleBean {
+class NoAppBarLayoutBean : IModuleBean {
     override fun getModuleName(): String = "No App Bar Layout"
 
     override fun onModuleClick(context: Context) {
@@ -64,7 +67,7 @@ class TransitionBean : IModuleBean {
     }
 }
 
-class DrawerBean: IModuleBean {
+class DrawerBean : IModuleBean {
     override fun getModuleName() = "DrawerLayout"
 
     override fun onModuleClick(context: Context) {
@@ -75,8 +78,37 @@ class DrawerBean: IModuleBean {
     }
 }
 
+class ThreadBean : IModuleBean {
+    override fun getModuleName() = "Thread Model"
+
+    override fun onModuleClick(context: Context) {
+        BaseFragmentActivity.innerIntent(context, THREAD_MODULE)
+    }
+}
+
+class ExoPlayerBean: IModuleBean {
+    override fun getModuleName() = "ExoPlayer"
+
+    override fun onModuleClick(context: Context) {
+        BaseFragmentActivity.innerIntent(context, EXO_MODULE)
+    }
+}
+
+class JavaBean: IModuleBean {
+    override fun getModuleName(): String {
+        return "JavaBean"
+    }
+
+    override fun onModuleClick(context: Context) {
+        BaseFragmentActivity.innerIntent(context, JAVA_MODULE)
+    }
+}
+
 object SourceList {
-    fun getSourceList() = arrayOf(CameraModuleBean(), ImageDecoderBean()
+    fun getSourceList() = arrayOf(
+        CameraModuleBean(), ImageDecoderBean()
         , SelfViewBean(), AppBarLayoutBean(), NoAppBarLayoutBean(),
-        TransitionBean(), DrawerBean())
+        TransitionBean(), DrawerBean(), ThreadBean(), ExoPlayerBean(),
+        JavaBean()
+    )
 }
