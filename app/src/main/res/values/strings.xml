@@ -31,4 +31,9 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+
+    <string name="exit_match_confirm">Are you sure you want to stop matching?</string>
+    <string name="cancel">Cancel</string>
+    <string name="yes">Yes</string>
+
 </resources>

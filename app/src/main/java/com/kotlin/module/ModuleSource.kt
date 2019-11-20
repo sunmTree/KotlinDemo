@@ -2,6 +2,8 @@ package com.kotlin.module
 
 import android.content.Context
 import android.content.Intent
+import androidx.fragment.app.FragmentActivity
+import com.kotlin.module.dialog.AnimDialogFragment
 import com.kotlin.module.drawer.DrawerActivity
 
 interface IModuleBean {
@@ -18,6 +20,8 @@ const val TRANSITION_MODULE = 6
 const val THREAD_MODULE = 7
 const val EXO_MODULE = 8
 const val JAVA_MODULE = 9
+const val KOTLIN_MODULE = 10
+const val LOTTIE_MODULE = 11
 
 class CameraModuleBean : IModuleBean {
     override fun getModuleName(): String = "Android Camera Demo"
@@ -104,11 +108,41 @@ class JavaBean: IModuleBean {
     }
 }
 
+class KotlinBean: IModuleBean {
+    override fun getModuleName(): String {
+        return "KotlinDemo"
+    }
+
+    override fun onModuleClick(context: Context) {
+        BaseFragmentActivity.innerIntent(context, KOTLIN_MODULE)
+    }
+}
+
+class LottieBean: IModuleBean {
+    override fun getModuleName(): String {
+        return "Lottie Bean"
+    }
+
+    override fun onModuleClick(context: Context) {
+        BaseFragmentActivity.innerIntent(context, LOTTIE_MODULE)
+    }
+}
+
+class DialogBean: IModuleBean {
+    override fun getModuleName() = "Show Dialog"
+
+    override fun onModuleClick(context: Context) {
+        if (context is FragmentActivity) {
+            AnimDialogFragment().show(context.supportFragmentManager, "AnimDialogFragment")
+        }
+    }
+}
+
 object SourceList {
     fun getSourceList() = arrayOf(
         CameraModuleBean(), ImageDecoderBean()
         , SelfViewBean(), AppBarLayoutBean(), NoAppBarLayoutBean(),
         TransitionBean(), DrawerBean(), ThreadBean(), ExoPlayerBean(),
-        JavaBean()
+        JavaBean(), KotlinBean(), LottieBean(), DialogBean()
     )
 }

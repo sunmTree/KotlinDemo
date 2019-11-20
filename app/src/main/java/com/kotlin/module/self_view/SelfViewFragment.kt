@@ -14,11 +14,9 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AlphaAnimation
-import android.view.animation.Animation
-import android.view.animation.AnimationSet
-import android.view.animation.ScaleAnimation
+import android.view.animation.*
 import com.kotlin.demo.R
+import kotlinx.android.synthetic.main.exo_fragment_layout.view.*
 import kotlinx.android.synthetic.main.self_view_layout.*
 import java.util.concurrent.TimeUnit
 
@@ -40,9 +38,12 @@ class SelfViewFragment: androidx.fragment.app.Fragment(), Handler.Callback {
         super.onViewCreated(view, savedInstanceState)
 //        makeSureTextSize()
         appendText()
-        startAnswerAnim()
+//        startAnswerAnim()
         appendImgTextView()
         mHandler.sendEmptyMessageDelayed(APPEND_DOT_MSG, TimeUnit.SECONDS.toMillis(1))
+        mHandler.postDelayed({ startChangeHeightAnim() }, TimeUnit.SECONDS.toMillis(2))
+
+        shimmer.showShimmer(true)
     }
 
     private fun startAnswerAnim() {
@@ -92,6 +93,24 @@ class SelfViewFragment: androidx.fragment.app.Fragment(), Handler.Callback {
     override fun onDestroy() {
         super.onDestroy()
         mHandler.removeCallbacksAndMessages(null)
+    }
+
+    private fun startChangeHeightAnim() {
+        val heightPixels = resources.displayMetrics.heightPixels - 100
+        val halfHeight = heightPixels / 2
+
+        val animator = ValueAnimator.ofInt(halfHeight, heightPixels)
+        animator.apply {
+            duration = 300
+            interpolator = LinearInterpolator()
+        }
+        animator.addUpdateListener {
+            val changeHeight = it.animatedValue as Int
+            Log.d("Height", "changeHeight $changeHeight")
+            anim_parent.layoutParams.height = changeHeight
+            anim_parent.requestLayout()
+        }
+        animator.start()
     }
 
     fun appendImgTextView() {

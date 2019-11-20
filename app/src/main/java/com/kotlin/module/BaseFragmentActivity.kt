@@ -13,6 +13,8 @@ import com.kotlin.module.camera.CameraFragment
 import com.kotlin.module.exo.ExoPlayerFragment
 import com.kotlin.module.image_decoder.ImageDecoderFragment
 import com.kotlin.module.java.JavaSimpleFragment
+import com.kotlin.module.kotlin_demo.KotlinDemoFragment
+import com.kotlin.module.lottie.LottieFragment
 import com.kotlin.module.self_view.SelfViewFragment
 import com.kotlin.module.thread.ThreadFragment
 
@@ -40,6 +42,8 @@ class BaseFragmentActivity : AppCompatActivity() {
             THREAD_MODULE -> ThreadFragment()
             EXO_MODULE -> ExoPlayerFragment()
             JAVA_MODULE -> JavaSimpleFragment()
+            KOTLIN_MODULE -> KotlinDemoFragment()
+            LOTTIE_MODULE -> LottieFragment()
             else -> DefaultFragment()
         }
         supportFragmentManager.beginTransaction().add(R.id.parent, fragment).commitAllowingStateLoss()

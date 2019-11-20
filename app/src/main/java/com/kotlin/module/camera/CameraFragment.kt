@@ -1,7 +1,11 @@
 package com.kotlin.module.camera
 
+import android.app.admin.DevicePolicyManager
+import android.content.Context
 import android.content.pm.PackageManager
+import android.hardware.camera2.CameraManager
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
