@@ -15,6 +15,7 @@ import com.kotlin.module.image_decoder.ImageDecoderFragment
 import com.kotlin.module.java.JavaSimpleFragment
 import com.kotlin.module.kotlin_demo.KotlinDemoFragment
 import com.kotlin.module.lottie.LottieFragment
+import com.kotlin.module.phone_number.PhoneNumberFragment
 import com.kotlin.module.self_view.SelfViewFragment
 import com.kotlin.module.thread.ThreadFragment
 
@@ -44,6 +45,7 @@ class BaseFragmentActivity : AppCompatActivity() {
             JAVA_MODULE -> JavaSimpleFragment()
             KOTLIN_MODULE -> KotlinDemoFragment()
             LOTTIE_MODULE -> LottieFragment()
+            PHONE_NUMBER_MODULE -> PhoneNumberFragment()
             else -> DefaultFragment()
         }
         supportFragmentManager.beginTransaction().add(R.id.parent, fragment).commitAllowingStateLoss()

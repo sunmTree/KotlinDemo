@@ -22,6 +22,7 @@ const val EXO_MODULE = 8
 const val JAVA_MODULE = 9
 const val KOTLIN_MODULE = 10
 const val LOTTIE_MODULE = 11
+const val PHONE_NUMBER_MODULE = 12
 
 class CameraModuleBean : IModuleBean {
     override fun getModuleName(): String = "Android Camera Demo"
@@ -138,11 +139,20 @@ class DialogBean: IModuleBean {
     }
 }
 
+class PhoneNumberBean : IModuleBean {
+    override fun getModuleName() = "PhoneNumber"
+
+    override fun onModuleClick(context: Context) {
+        BaseFragmentActivity.innerIntent(context, PHONE_NUMBER_MODULE)
+    }
+
+}
+
 object SourceList {
     fun getSourceList() = arrayOf(
         CameraModuleBean(), ImageDecoderBean()
         , SelfViewBean(), AppBarLayoutBean(), NoAppBarLayoutBean(),
         TransitionBean(), DrawerBean(), ThreadBean(), ExoPlayerBean(),
-        JavaBean(), KotlinBean(), LottieBean(), DialogBean()
+        JavaBean(), KotlinBean(), LottieBean(), DialogBean(), PhoneNumberBean()
     )
 }

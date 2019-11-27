@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.kotlin.demo.R
+import java.util.*
 import java.util.concurrent.TimeUnit
 
 class KotlinDemoFragment : Fragment() {
@@ -50,6 +51,17 @@ class KotlinDemoFragment : Fragment() {
             mFilterTimeCountDown.stopCountDown()
             Toast.makeText(context, "Finish count down", Toast.LENGTH_SHORT).show()
         }, TimeUnit.SECONDS.toMillis(20))
+
+
+        localDemo()
+    }
+
+    private fun localDemo() {
+        val locale = Locale.getDefault()
+        Log.d("Locale", "[ country ${locale.country} \n isoCountry ${locale.isO3Country} \n" +
+                "language ${locale.language}] \n displayName ${locale.displayName} \n" +
+                "displayScript ${locale.displayScript} \n displayVariant ${locale.displayVariant} \n" +
+                "extensionKeys ${locale.extensionKeys}")
     }
 
 }
