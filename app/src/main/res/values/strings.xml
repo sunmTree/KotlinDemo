@@ -35,5 +35,6 @@
     <string name="exit_match_confirm">Are you sure you want to stop matching?</string>
     <string name="cancel">Cancel</string>
     <string name="yes">Yes</string>
+    <string name="capture_img">Capture Image</string>
 
 </resources>

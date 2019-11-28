@@ -10,6 +10,7 @@ import com.kotlin.module.animation.TransitionFragment
 import com.kotlin.module.app_layout.AppBarLayoutFragment
 import com.kotlin.module.app_layout.NoAppBarLayoutFragment
 import com.kotlin.module.camera.CameraFragment
+import com.kotlin.module.camerax.CameraXFragment
 import com.kotlin.module.exo.ExoPlayerFragment
 import com.kotlin.module.image_decoder.ImageDecoderFragment
 import com.kotlin.module.java.JavaSimpleFragment
@@ -46,6 +47,7 @@ class BaseFragmentActivity : AppCompatActivity() {
             KOTLIN_MODULE -> KotlinDemoFragment()
             LOTTIE_MODULE -> LottieFragment()
             PHONE_NUMBER_MODULE -> PhoneNumberFragment()
+            CAMERAX_MODULE -> CameraXFragment()
             else -> DefaultFragment()
         }
         supportFragmentManager.beginTransaction().add(R.id.parent, fragment).commitAllowingStateLoss()

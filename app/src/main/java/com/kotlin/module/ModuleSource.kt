@@ -2,6 +2,7 @@ package com.kotlin.module
 
 import android.content.Context
 import android.content.Intent
+import androidx.camera.core.CameraX
 import androidx.fragment.app.FragmentActivity
 import com.kotlin.module.dialog.AnimDialogFragment
 import com.kotlin.module.drawer.DrawerActivity
@@ -23,6 +24,7 @@ const val JAVA_MODULE = 9
 const val KOTLIN_MODULE = 10
 const val LOTTIE_MODULE = 11
 const val PHONE_NUMBER_MODULE = 12
+const val CAMERAX_MODULE = 13
 
 class CameraModuleBean : IModuleBean {
     override fun getModuleName(): String = "Android Camera Demo"
@@ -145,7 +147,14 @@ class PhoneNumberBean : IModuleBean {
     override fun onModuleClick(context: Context) {
         BaseFragmentActivity.innerIntent(context, PHONE_NUMBER_MODULE)
     }
+}
 
+class CameraxBean : IModuleBean {
+    override fun getModuleName() = "CameraX Module"
+
+    override fun onModuleClick(context: Context) {
+        BaseFragmentActivity.innerIntent(context, CAMERAX_MODULE)
+    }
 }
 
 object SourceList {
@@ -153,6 +162,7 @@ object SourceList {
         CameraModuleBean(), ImageDecoderBean()
         , SelfViewBean(), AppBarLayoutBean(), NoAppBarLayoutBean(),
         TransitionBean(), DrawerBean(), ThreadBean(), ExoPlayerBean(),
-        JavaBean(), KotlinBean(), LottieBean(), DialogBean(), PhoneNumberBean()
+        JavaBean(), KotlinBean(), LottieBean(), DialogBean(), PhoneNumberBean(),
+        CameraxBean()
     )
 }

@@ -47,4 +47,7 @@ dependencies {
     implementation 'com.airbnb.android:lottie:3.0.0'
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
     implementation 'com.googlecode.libphonenumber:libphonenumber:8.9.10'
+    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation "androidx.camera:camera-core:$camerax_version"
+    implementation "androidx.camera:camera-camera2:$camerax_version"
 }
